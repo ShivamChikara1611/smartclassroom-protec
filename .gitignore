@@ -21,8 +21,6 @@ __pycache__/
 .frontend/.env
 *.DS_Store
 
-python/
-smartclassrom-protec/
 
 
 # -------------------
