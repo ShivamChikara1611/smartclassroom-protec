@@ -21,6 +21,9 @@ __pycache__/
 .frontend/.env
 *.DS_Store
 
+.smartclassroom-protec
+.python
+
 # -------------------
 # VS Code / IDE
 # -------------------
@@ -38,3 +41,4 @@ Thumbs.db
 # Hugging Face / Spaces
 # -------------------
 *.pyc
+
