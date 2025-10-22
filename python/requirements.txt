@@ -1,0 +1,8 @@
+numpy==1.24.3
+opencv-python==4.7.0.72
+cvlib==0.2.7
+tensorflow==2.13.0
+paho-mqtt
+certifi==2023.7.22
+gradio==4.44.0
+python-dotenv==1.0.0

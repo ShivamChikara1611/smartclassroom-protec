@@ -1,0 +1,39 @@
+# -------------------
+# Node.js
+# -------------------
+backend/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.DS_Store
+
+# -------------------
+# Python
+# -------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv/
+.env/
+*.DS_Store
+
+# -------------------
+# VS Code / IDE
+# -------------------
+.vscode/
+.idea/
+
+# -------------------
+# System files
+# -------------------
+Thumbs.db
+.DS_Store
+*.log
+
+# -------------------
+# Hugging Face / Spaces
+# -------------------
+*.pyc
