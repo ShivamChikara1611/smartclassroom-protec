@@ -16,6 +16,9 @@ __pycache__/
 *.pyd
 *.venv/
 .env/
+.backend/.env
+.python/.env
+.frontend/.env
 *.DS_Store
 
 # -------------------
