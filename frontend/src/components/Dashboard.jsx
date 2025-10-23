@@ -169,9 +169,9 @@ const Dashboard = () => {
             </h2>
 
             {/* Summary Cards */}
-            <div className='flex justify-between items-center mb-10'>
+            <div className='flex justify-between items-center mb-10 gap-5'>
             <StreamVideo />
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-3 gap-5 w-full">
                 <div className="bg-white p-4 shadow-lg rounded-lg text-center">
                     <h3 className="text-sm font-semibold text-gray-500">{texts[language].temperature}</h3>
                     <p className="text-2xl font-bold">{latestSensor.temperature ?? '-'} {texts[language].tempUnit}</p>

@@ -120,7 +120,7 @@ client.on("message", async (topic, message) => {
             if (data.occupancy !== lastOccupancy) {
                 lastOccupancy = data.occupancy;
                 const subject = data.occupancy ? "Occupancy Detected" : "Room Empty";
-                const text = data.occupancy ? "Someone entered the classroom." : "Classroom is now empty.";
+                const text = data.occupancy ? "Someone entered the classroom, Please turn on the lights and fans." : "Classroom is now empty, Please turn off the lights and fans.";
                 await sendNotification(subject, text);
             }
 

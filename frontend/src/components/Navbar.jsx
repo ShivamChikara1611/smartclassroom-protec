@@ -8,8 +8,8 @@ const Navbar = () => {
     const { language, toggleLanguage } = useContext(LanguageContext);
 
     const texts = {
-        en: { switch: "日本語", heading: "Smart Classroom Automation" },
-        jp: { switch: "English", heading: "スマートクラスルームの自動化" },
+        en: { switch: "日本語", heading: "Smart Classroom Automation System" },
+        jp: { switch: "English", heading: "スマートクラスルームオートメーションシステム" },
     };
 
 
