@@ -137,7 +137,7 @@ app.get("/latest/ai", (req, res) => res.json(latestAIData || {}));
 
 app.get("/history/sensors", async (req, res) => {
     try {
-        const data = await Sensor.find().sort({ timestamp: -1 }).limit(50);
+        const data = await Sensor.find().sort({ timestamp: -1 }).limit(100);
         res.json(data.reverse());
     } catch (err) {
         res.status(500).json({ error: "Failed to fetch sensor history" });
@@ -146,7 +146,7 @@ app.get("/history/sensors", async (req, res) => {
 
 app.get("/history/ai", async (req, res) => {
     try {
-        const data = await AI.find().sort({ timestamp: -1 }).limit(50);
+        const data = await AI.find().sort({ timestamp: -1 }).limit(100);
         res.json(data.reverse());
     } catch (err) {
         res.status(500).json({ error: "Failed to fetch AI history" });

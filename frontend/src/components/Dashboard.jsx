@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { LanguageContext } from '../context/LanguageContext';
+import StreamVideo from './StreamVideo';
 
 const Dashboard = () => {
     const { language } = useContext(LanguageContext);
@@ -58,7 +59,7 @@ const Dashboard = () => {
                 const aiLatestRes = await fetch('http://localhost:3000/latest/ai');
                 setLatestAI(await aiLatestRes.json());
 
-                // Last 50 historical records
+                // Last 100 historical records
                 const sensorHistRes = await fetch('http://localhost:3000/history/sensors');
                 setSensorHistory(await sensorHistRes.json());
 
@@ -168,7 +169,9 @@ const Dashboard = () => {
             </h2>
 
             {/* Summary Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-5 mb-10">
+            <div className='flex justify-between items-center mb-10'>
+            <StreamVideo />
+            <div className="grid grid-cols-3 gap-5">
                 <div className="bg-white p-4 shadow-lg rounded-lg text-center">
                     <h3 className="text-sm font-semibold text-gray-500">{texts[language].temperature}</h3>
                     <p className="text-2xl font-bold">{latestSensor.temperature ?? '-'} {texts[language].tempUnit}</p>
@@ -181,14 +184,15 @@ const Dashboard = () => {
                     <h3 className="text-sm font-semibold text-gray-500">{texts[language].occupancy}</h3>
                     <p className="text-2xl font-bold">{latestAI.occupancy ? texts[language].occupied : texts[language].empty}</p>
                 </div>
-                <div className="bg-white p-4 shadow-lg rounded-lg text-center">
-                    <h3 className="text-sm font-semibold text-gray-500">{texts[language].fanStatus}</h3>
+                <div className={`p-4 shadow-lg rounded-lg text-center ${latestAI.fan_opt ? 'bg-green-500': 'bg-red-500'}`}>
+                    <h3 className="text-sm font-semibold text-gray-100">{texts[language].fanStatus}</h3>
                     <p className="text-2xl font-bold">{latestAI.fan_opt ? texts[language].on : texts[language].off}</p>
                 </div>
-                <div className="bg-white p-4 shadow-lg rounded-lg text-center">
-                    <h3 className="text-sm font-semibold text-gray-500">{texts[language].lightStatus}</h3>
+                <div className={`p-4 shadow-lg rounded-lg text-center ${latestAI.fan_opt ? 'bg-green-500': 'bg-red-500'}`}>
+                    <h3 className="text-sm font-semibold text-gray-100">{texts[language].lightStatus}</h3>
                     <p className="text-2xl font-bold">{latestAI.light_opt ? texts[language].on : texts[language].off}</p>
                 </div>
+            </div>
             </div>
 
             {/* Sensor Chart */}

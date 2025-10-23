@@ -89,6 +89,9 @@ def process_stream():
             time.sleep(1)
             continue
 
+        # Fix mirroring issue
+        frame = cv2.flip(frame, 1)
+        
         # Process every ~0.5 second (2 FPS effective)
         now = time.time()
         if now - last_time >= 0.5:
